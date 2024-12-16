@@ -15,10 +15,11 @@ io.on("connection", (socket)=>{
     socket.on("chat ka message", (msg)=>{
         log("the message sent from client "+ socket.id+" is "+ '"'+msg +'"')
 
+    io.emit("chat ka message", msg)
+    })
     //handling disconnect
     socket.on("disconnect", (socket)=>{
         log("client "+"'"+socket.id+"'"+" disconneted")
-    })
     })
     console.log("id from server side", socket.id);
 
